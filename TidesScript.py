@@ -5,8 +5,8 @@ import random
 import numpy as np
 import matplotlib.pyplot as plt
 import ctypes
-SPI_SETDESKWALLPAPER = 20 
 
+SPI_SETDESKWALLPAPER = 20 
 URL = "https://www.tide-forecast.com/tides/Puerto-de-la-Luz-Gran-Canaria-Canary-Islands.js"
 IMAGE_FOLDER = 'D:/Pictures/walls'
 IMAGE_OUTPUT_NAME = 'D:/Pictures/walls/edited/edited.png'
@@ -23,9 +23,9 @@ fig, ax = plt.subplots()
 frame1 = plt.gca()
 frame1.axes.get_xaxis().set_visible(False)
 frame1.axes.get_yaxis().set_visible(False)
-ax.plot(xs, ys, 'o', linewidth=5, color='firebrick')
-ax.plot(xs[50:70], ys[50:70], 'o', linewidth=5, color='green')
-ax.plot(xs[60], ys[60], 'o', linewidth=5, color='lime')
+ax.plot(xs, ys, '-', linewidth=5, color='firebrick')
+ax.plot(xs[50:70], ys[50:70], '-', linewidth=5, color='green')
+ax.plot(xs[60], ys[60], 'd', linewidth=5, color='lime')
 plt.savefig(IMAGE_OUTPUT_NAME, bbox_inches='tight', transparent=True)
 
 #Resize to 1080
