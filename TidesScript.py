@@ -2,11 +2,9 @@ import urllib2
 from PIL import Image
 import os
 import random
-import numpy as np
 import matplotlib.pyplot as plt
 import ctypes
 import time
-from shutil import copyfile
 
 ## Constants
 SPI_SETDESKWALLPAPER = 20 
@@ -14,7 +12,6 @@ URL = "https://www.tide-forecast.com/tides/Puerto-de-la-Luz-Gran-Canaria-Canary-
 IMAGE_FOLDER = 'D:/Pictures/walls'
 IMAGE_OUTPUT_NAME = 'D:/Pictures/walls/edited/edited.png'
 CURRENT_TIME = int(time.time())
-WINDOWS_WALLPAPER_PATH = os.environ['AppData']+'/Microsoft/Windows/Themes/TranscodedWallpaper'
 
 ## Data and files preparation
 #split rows and filter
@@ -58,5 +55,4 @@ wallpaper.paste(plot_image, position, plot_image)
 wallpaper.save(IMAGE_OUTPUT_NAME)
 
 #Set as wallpaper
-copyfile(IMAGE_OUTPUT_NAME, WINDOWS_WALLPAPER_PATH)
 ctypes.windll.user32.SystemParametersInfoA(SPI_SETDESKWALLPAPER, 0, IMAGE_OUTPUT_NAME , 0)
