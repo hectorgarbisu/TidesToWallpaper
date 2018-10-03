@@ -16,7 +16,7 @@ if __name__ == "__main__":
     waves = tides.get_current_day_forecast(150)
     current_time_index = tides.get_now_index()
 
-    # Selectiof of a random image from folder
+    # Selection of a random image from folder
     images_in_folder = [file for file in os.listdir(
         IMAGE_FOLDER) if file.endswith(('.png', '.jpg', '.bmp'))]
     random_image = IMAGE_FOLDER+'/'+random.choice(images_in_folder)
@@ -29,7 +29,7 @@ if __name__ == "__main__":
     frame1.axes.get_yaxis().set_visible(False)
     cti = current_time_index
     ax.plot(xs, waves, '-', linewidth=5, color='firebrick')
-    # 10 points before now and 10 points after now are redrawn with different color
+    # 5 points before now and 10 points after now are redrawn with different color
     ax.plot(xs[cti-5:cti+5], waves[cti-5:cti+5], '-', linewidth=5, color='green')
     # the current time is drawn with lime color
     ax.plot(xs[cti], waves[cti], 'd', linewidth=5, color='lime')
